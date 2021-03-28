@@ -4,7 +4,7 @@ import API from '../../API';
 
 
 export async function CadastrarUsuarioService( props : CanalAtendimentoInterface) {
-    const response = await API.post<AxiosResponse>(`/autenticate/`, props)
+    const response = await API.post<AxiosResponse>(`/autenticate/CadastrarUsuario`, props)
         .then((response) => {
             console.log(response);
             return response
@@ -16,9 +16,8 @@ export async function CadastrarUsuarioService( props : CanalAtendimentoInterface
 }
 
 export async function ListarUsuarioService() {
-    const response = await API.get<AxiosResponse>(`/autenticate/2`)
+    const response = await API.get<AxiosResponse>(`/autenticate/ListarUsuarios`)
         .then((response) => {
-            console.log(response);
             return response
         })
         .catch((err)=>{

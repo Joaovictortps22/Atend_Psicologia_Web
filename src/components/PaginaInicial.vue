@@ -1,35 +1,20 @@
 <template>
-    <v-container>
-        <body>
-            <v-col id="img">
-                <img src="@/assets/atendimentoImg.jpg" alt="ImgPrincipal" width=500 height=500 id="ImgPrincial">
-            </v-col>
-            <v-col id="txt">
-                <h1 id="TextoInicial">
-                    Você precisa conversar?
-                </h1>
-                <div>{{message}}</div>
-            </v-col>
-              <v-btn x-large v-on:click="handleCadastrarUser" id="BtnAgendarAtendimento" style="margin-top: -600px; margin-left: 600px;">
-                  Agendar atendiment
-              </v-btn>
-  <div>s
-    <v-card
-      class="d-flex justify-space-around mb-6"
-      :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'"
-      flat
-      tile
-    >
-      <v-card
-        v-for="n in 2"
-        :key="n"
-        class="pa-4"
-        outlined
-        tile
-      >
-        </v-card>
-      </v-card>
-      </div>
+  <v-container>
+    <body>
+      <v-col id="img">
+          <img src="@/assets/atendimentoImg.jpg" alt="ImgPrincipal" width=500 height=500 id="ImgPrincial">
+      </v-col>
+      <v-col id="txt" >
+          <h1 id="TextoInicial">
+              Você precisa conversar?
+          </h1>
+          <span></span>
+              
+          <div>{{message}}</div>
+      </v-col>
+      <v-btn x-large v-on:click="handleCadastrarUser" id="BtnAgendarAtendimento" style="margin-top: -600px; margin-left: 600px;">
+          Agendar atendiment
+      </v-btn>
     </body>
   </v-container>
 </template>
@@ -58,10 +43,35 @@ import { CanalAtendimentoInterface } from '@/Interface/authenticate/authenticate
 import Vue from 'vue';
 export default Vue.extend({
   name: 'PaginaInicial',
-  
+
+  data(){
+    return{
+      user: {
+          id:'',
+          nome: '',
+          nomesocial: '',
+          login: '',
+          password:'' ,
+          email: '',
+          nascimento: '',
+          cidade: '',
+          bairro: '',
+          estado: '',
+          telefone:'' ,
+          cpf: '',
+          genero:'' ,
+          sobre: '',
+          role: ''
+      }
+    }
+    
+  },  
   methods: {
     handleCadastrarUser(){
-      ListarUsuarioController().then(response => { const resposta = response })
+      ListarUsuarioController().then(response => { 
+        this.user = response
+        console.log(this.user)
+        })
     }
   }
 });

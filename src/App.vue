@@ -40,37 +40,18 @@
     <v-main>
       <PaginaInicial/>
     <body style="color: black;">
-      <div id="OlaMundo">Olá mundo</div>
-      <div>
-      <img src="@/assets/atendimentoImg.jpg" alt="ImgPrincipal" width=500 height=500 id="ImgPrincial">
-      <h1 id="TextoInit">
-        Você precisa conversar?
-      </h1>
-      <v-btn x-large @click="newAppointment" id="BtnAgendarAtendimento" style="margin-top: -600px; margin-left: 600px;">
-        Agendar atendimento
-      </v-btn>
-      </div>
     </body>
     </v-main>
   </v-app>
 </template>
 
 <style>
-  @media only screen and (max-width: 601px) {
-   #OlaMundo{
-    color: red;
-  },
-  #TextoInit{
-    margin-left: 500px;
-    color: red;
-  }
-}
+
 </style>
 
 <script lang="ts">
 import Vue from 'vue';
 import PaginaInicial from './components/PaginaInicial.vue';
-import PaginaInicial from './components/HeloWord.vue';
 
 export default Vue.extend({
   name: 'App',
