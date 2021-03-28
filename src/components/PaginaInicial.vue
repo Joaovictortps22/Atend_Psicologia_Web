@@ -13,7 +13,7 @@
           <div>{{message}}</div>
       </v-col>
       <v-btn x-large v-on:click="handleCadastrarUser" id="BtnAgendarAtendimento" style="margin-top: -600px; margin-left: 600px;">
-          Agendar atendiment
+          Agendar atendimento
       </v-btn>
     </body>
   </v-container>
